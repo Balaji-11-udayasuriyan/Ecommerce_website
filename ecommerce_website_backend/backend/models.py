@@ -14,3 +14,10 @@ class SubCategory(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.category.name})"
+
+class Brand(models.Model):
+    name = models.CharField(max_length=255)
+    photo = models.ImageField(upload_to='brand_photos/')
+
+    def __str__(self):
+        return self.name
